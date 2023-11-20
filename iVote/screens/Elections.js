@@ -1,14 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Layout from './Layout';
+import Layout from '../Layout';
 
-export default function Setting() {
+const Elections = () => {
   return (
     <Layout>
     <View>
-      <Text>Setting</Text>
+      <Text>Elections</Text>
     </View>
     </Layout>
-    
   )
 }
+export default Elections;

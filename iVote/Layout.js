@@ -1,7 +1,7 @@
 import React from 'react';
-import { Platform, StatusBar, SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import { Platform, StatusBar, SafeAreaView, View, Text, StyleSheet, Image } from 'react-native';
 import { useFonts, Nunito_600SemiBold, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
-import { Navigation } from 'react-native-navigation';
+
 
 
 const Layout = ({children}) => {
@@ -16,10 +16,13 @@ const Layout = ({children}) => {
     return null;
   }
   return (
+    
     // the parent view is the entire screen
     <SafeAreaView
       style={[styles.container, styles.safeArea]}
     >
+      <StatusBar translucent backgroundColor="rgba(0, 0, 0, 1)" />
+
       {/* the header is 1/12 of the screen */}
       <View style={styles.header}>
         <Text style={styles.headerText}>App's Header</Text>
@@ -28,10 +31,7 @@ const Layout = ({children}) => {
       <View style={styles.body}>
         {children}
       </View>
-      {/* the footer is 1/12 of the screen */}
-      <View style={styles.navigator}>
-        <Text>App's Navigation</Text>
-      </View>
+      
     </SafeAreaView>
   );
 };
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     backgroundColor: 'skyblue',
     justifyContent: 'center',
-    borderColor: '#540007',
+    borderColor: '#ED182A',
     borderBottomWidth: 1,
     paddingLeft: 20,
     backgroundColor: '#A1000E',
@@ -61,14 +61,8 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 10,
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
   },
-  navigator: {
-    flex: 1, 
-    backgroundColor: 'whitesmoke',
-    justifyContent: 'center',
-    borderColor: '#C2C8CF',
-    borderTopWidth: 0.3,
-  },
+  
 });
 export default Layout;

@@ -1,13 +1,16 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Layout from './Layout';
+import Layout from '../Layout';
 
-export default function Voting() {
+const Setting = () => {
   return (
     <Layout>
     <View>
-      <Text>Voting</Text>
+      <Text>Setting</Text>
     </View>
     </Layout>
+    
   )
 }
+
+export default Setting;
