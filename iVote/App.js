@@ -1,7 +1,5 @@
-/* eslint-disable no-use-before-define */
-
+// This is the homepage of the app. User sees this after logging in from the startup page.
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import {
   StyleSheet, Text, View, TextInput, Image,
 } from 'react-native';
