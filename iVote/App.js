@@ -35,6 +35,42 @@ const navigationTheme = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#6CB6EC',
+  },
+
+  tasksWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+
+  sectionTitle: {
+    fontSize: 44,
+    fontWeight: 'bold',
+  },
+
+  sectionExtra: {
+    paddingTop: 20,
+    fontSize: 20,
+  },
+
+  sectionExtra2: {
+    paddingTop: 80,
+    fontSize: 20,
+  },
+
+  sectionExtra3: {
+    paddingTop: 80,
+    fontSize: 20,
+  },
+
+  sectionExtra4: {
+    paddingTop: 80,
+    fontSize: 20,
+  },
+
+  items: {},
+  container: {
+    flex: 1,
     backgroundColor: '#25292e',
     alignItems: 'center',
     justifyContent: 'center',
