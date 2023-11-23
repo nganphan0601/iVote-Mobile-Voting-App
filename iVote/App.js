@@ -1,95 +1,67 @@
-// This is the homepage of the app. User sees this after logging in from the startup page.
-import React from 'react';
-import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
-import Layout from './Layout';
-import Home from './screens/Home.js';
-import Elections from './screens/Elections.js';
-import Voting from './screens/Voting.js';
-import Setting from './screens/Setting.js';
-import Startup from './screens/Startup.js';
-// import { Navigation } from 'react-native-navigation';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AntDesign } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-const Tab = createBottomTabNavigator();
-const screenOptions = {
-  tabBarShowLabel: false,
-  headerShown: false,
-  tabBarStyle: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    left: 0,
-    elevation: 0,
-    height: 70,
-    background: 'whitesmoke',
-    display: 'flex',
-    alignItems: 'space-between',
-    justifyContent: 'center',
-  },
-};
-
-export default function App() {
+const Startup = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={screenOptions}>
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <AntDesign name="home" size={24} color="black" />
-                <Text style={styles.tabText}>HOME</Text>
-              </View>
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Voting"
-          component={Voting}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <Ionicons name="location-outline" size={24} color="black" />
-                <Text style={styles.tabText}>VOTING</Text>
-              </View>
-            ),
-          }}
-        />
+    <View style={styles.container}>
+      {/* some random formatting for syntax practice */}
+      <View style={styles.tasksWrapper}>
+        <Text style={styles.sectionTitle}>Welcome to iVote</Text>
 
-        <Tab.Screen
-          name="Elections"
-          component={Elections}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <Feather name="archive" size={24} color="black" />
-                <Text style={styles.tabText}>ELECTIONS</Text>
-              </View>
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Setting"
-          component={Setting}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <AntDesign name="setting" size={24} color="black" />
-                <Text style={styles.tabText}>SETTING</Text>
-              </View>
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+        <Text style={styles.sectionExtra}>
+          this is the initial startup screen, change the colors or whatever how u want
+        </Text>
+        <Text style={styles.sectionExtra2}>i am only viewed once on first startup</Text>
+        <Text style={styles.sectionExtra3}>
+          some simple imagery as an intuitive tutorial could be nice here
+        </Text>
+        <Text style={styles.sectionExtra4}>
+          ill probably add a scroll here to fit some images in. finish here with a button for
+          location input + transition
+        </Text>
+        <View style={styles.items}></View>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  tabText: { fontSize: 12, color: 'black', width: '100%' },
+  container: {
+    flex: 1,
+    backgroundColor: '#6CB6EC',
+  },
+
+  tasksWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+
+  sectionTitle: {
+    fontSize: 44,
+    fontWeight: 'bold',
+  },
+
+  sectionExtra: {
+    paddingTop: 20,
+    fontSize: 20,
+  },
+
+  sectionExtra2: {
+    paddingTop: 80,
+    fontSize: 20,
+  },
+
+  sectionExtra3: {
+    paddingTop: 80,
+    fontSize: 20,
+  },
+
+  sectionExtra4: {
+    paddingTop: 80,
+    fontSize: 20,
+  },
+
+  items: {},
 });
+
+export default Startup;

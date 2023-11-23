@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, StatusBar, SafeAreaView, View, Text, StyleSheet, Image } from 'react-native';
 import { useFonts, Nunito_600SemiBold, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
-import Header from './header';
+import Header from './Header';
 import { useRoute } from '@react-navigation/native';
 
 const Layout = ({children}) => {

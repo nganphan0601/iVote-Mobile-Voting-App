@@ -12,7 +12,6 @@ const Header = ({title}) => {
 const styles = StyleSheet.create({
     header:{
         flex: 1, 
-        backgroundColor: 'skyblue',
         justifyContent: 'center',
         borderColor: '#ED182A',
         borderBottomWidth: 1,
