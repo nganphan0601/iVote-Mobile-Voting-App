@@ -1,11 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import FirstScreen from './screens/firstScreen';
 import Home from './screens/home';
-import Header from './components/header';
-//import Navigator from './routes/homeStack';
 
 
 export default function App() {
@@ -33,11 +31,6 @@ const navigationTheme = {
   },
 };
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#6CB6EC',
-  },
-
   tasksWrapper: {
     paddingTop: 80,
     paddingHorizontal: 20,

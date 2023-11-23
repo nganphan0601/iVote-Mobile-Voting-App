@@ -1,15 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Button from '../components/Button';
-import ImageViewer from '../components/ImageViewer';
 const PlaceholderImage = require('../assets/placeholder.png');
 
 export default function FirstScreen({ navigation }) {
-
-  const savePostal = async () =>{alert('You pressed the savePostal button.')}; //needs further implementation
-
   return (
     <View style={styles.container}>
         <View style={styles.imageContainer}>

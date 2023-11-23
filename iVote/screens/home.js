@@ -1,16 +1,24 @@
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text, StyleSheet } from 'react-native'
+import React from 'react'
+import Layout from '../Layout';
 
-export default function Home() {
-    return (
-        <View style={styles.container}>
-            <Text>Home Screen</Text>
-        </View>
-    )
+const Home = () => {
+  return (
+    <Layout>
+    <View style={styles.container}>
+        <Text>Welcome to iVote! :D</Text>
+    </View>
+    </Layout>
+  )
 }
 
 const styles = StyleSheet.create({
     container: {
-        padding: 24
-    }
-});
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },  
+  });
+
+  export default Home;
