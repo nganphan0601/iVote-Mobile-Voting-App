@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <Layout>
     <View style={styles.container}>
-        <Text>Welcome to iVote!</Text>
+        <Text>Welcome to iVote! :D</Text>
     </View>
     </Layout>
   )
