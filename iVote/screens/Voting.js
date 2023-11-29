@@ -2,7 +2,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import Layout from '../Layout';
 
-const Voting = () => {
+const Voting = (GlobalStates) => {
+  const {postalCode, setPostalCode} = GlobalStates;
   return (
     <Layout>
     <View>

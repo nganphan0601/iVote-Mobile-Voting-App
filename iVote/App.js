@@ -3,17 +3,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 import FirstScreen from './screens/firstScreen';
-import Home from './screens/home';
+import Main from './Main';
 
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
+  const [postalCode, setPostalCode] = React.useState('');
 
+  const GlobalStates = {
+    postalCode, setPostalCode
+  }
+  const Stack = createNativeStackNavigator();
   return (
-      <NavigationContainer theme={navigationTheme}>
-        <Stack.Navigator initialRouteName="FirstScreen">
-          <Stack.Screen name="FirstScreen" component={FirstScreen} />
-          <Stack.Screen name="Home" component={Home} />
+      <NavigationContainer theme={navigationTheme} independent={true}>
+        <Stack.Navigator initialRouteName="iVote">
+          <Stack.Screen name="iVote">
+              {props => <FirstScreen {...props} GlobalStates={GlobalStates} />}
+          </Stack.Screen>
+          <Stack.Screen name="Main" options={{headerShown: false}} >
+              {props => <Main {...props} GlobalStates={GlobalStates} />}
+          </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
   );

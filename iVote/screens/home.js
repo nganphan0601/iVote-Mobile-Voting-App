@@ -2,7 +2,8 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Layout from '../Layout';
 
-const Home = () => {
+const Home = (GlobalStates) => {
+  const {postalCode, setPostalCode} = GlobalStates;
   return (
     <Layout>
     <View style={styles.container}>

@@ -6,7 +6,7 @@ import Home from './screens/Home.js';
 import Elections from './screens/Elections.js';
 import Voting from './screens/Voting.js';
 import Setting from './screens/Setting.js';
-import Startup from './App.js';
+//import Startup from './App.js';
 // import { Navigation } from 'react-native-navigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -32,13 +32,12 @@ const screenOptions = {
   },
 };
 
-export default function App() {
+export default function App({GlobalStates}) {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen
           name="Home"
-          component={Home}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -46,11 +45,11 @@ export default function App() {
                 <Text style={styles.tabText}>HOME</Text>
               </View>
             ),
-          }}
-        />
+          }}>
+          {props => <Home {...props} GlobalStates={GlobalStates} />}
+        </Tab.Screen>
         <Tab.Screen
           name="Voting"
-          component={Voting}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -58,12 +57,12 @@ export default function App() {
                 <Text style={styles.tabText}>VOTING</Text>
               </View>
             ),
-          }}
-        />
+          }}>
+            {props => <Voting {...props} GlobalStates={GlobalStates} />}
+          </Tab.Screen>
 
         <Tab.Screen
           name="Elections"
-          component={Elections}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -71,11 +70,11 @@ export default function App() {
                 <Text style={styles.tabText}>ELECTIONS</Text>
               </View>
             ),
-          }}
-        />
+          }}>
+            {props => <Elections {...props} GlobalStates={GlobalStates} />}
+          </Tab.Screen>
         <Tab.Screen
           name="Setting"
-          component={Setting}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -83,8 +82,9 @@ export default function App() {
                 <Text style={styles.tabText}>SETTING</Text>
               </View>
             ),
-          }}
-        />
+          }}>
+          {props => <Setting {...props} GlobalStates={GlobalStates} />}
+          </Tab.Screen>
       </Tab.Navigator>
     </NavigationContainer>
   );
