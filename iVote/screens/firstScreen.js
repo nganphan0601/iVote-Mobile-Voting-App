@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
 import Button from '../components/Button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-const PlaceholderImage = require('../assets/placeholder.png');
+const Logo = require('../assets/logo.png');
 
 export default function FirstScreen({ navigation, GlobalStates }) {
   const {postalCode, setPostalCode} = GlobalStates
@@ -35,10 +35,10 @@ export default function FirstScreen({ navigation, GlobalStates }) {
   return (
     <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <Image source={PlaceholderImage} style={styles.image}></Image>
+          <Image source={Logo} style={styles.image}></Image>
         </View>
         <Text style={styles.whiteText}>Enter Postal Code: {postalCode}</Text>
-        <TextInput style={styles.textbox} placeholder='e.g. A9A 9A9' onChangeText={value => setPostalCode(value)}/>
+        <TextInput style={styles.textbox} placeholder='e.g. A9A 9A9' maxLength={6} onChangeText={value => setPostalCode(value)}/>
       <View style={styles.footerContainer}>
          <Button theme="primary" label="Next" onPress={storePostalCode} />
       </View>
@@ -50,7 +50,7 @@ export default function FirstScreen({ navigation, GlobalStates }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 320,
-    height: 120,
+    height: 220,
     borderRadius: 18,
   },
   footerContainer: {
@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   whiteText: {
-    color: '#fff'
+    color: 'black',
+    fontWeight: 'bold',
   },
   textbox: {
     borderWidth: 1,
@@ -76,6 +77,6 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 10,
     width: 200,
-    color: '#fff',
+    color: 'black',
   },
 });
